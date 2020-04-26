@@ -22,7 +22,7 @@ import {Button} from '_atoms';
             <Input iconName="lock" iconColor="#f5a10e" placeholderText="Password"/>
             <View style={{alignItems:'flex-end',width:'90%'}}>
                 <Text style={{color:'#fff',fontFamily:'Poppins-Regular'}}>
-                    Forgot your Password ? <Text style={{color:'orange',fontFamily:'Poppins-Regular'}}> reset here</Text> 
+                    Forgot your Password is OK? <Text style={{color:'orange',fontFamily:'Poppins-Regular'}}> reset here</Text> 
                 </Text>
             </View>
             <Button navigation={this.props.navigation} iconName="sign-in" iconColor="#fff" buttonText="Sign In" />
