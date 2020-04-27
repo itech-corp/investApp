@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import {FormContainer } from '_molecules'
+import {SignInForm } from '_molecules'
 import investBrand from '../../assets/images/invest.png';
 
 
@@ -17,7 +17,7 @@ const LoginScreen = ({navigation}) => (
           <View style={styles.imageContainer}>
             <Image source={investBrand} style={styles.image}  />
           </View>
-          <FormContainer navigation={navigation} />
+          <SignInForm navigation={navigation} />
           
       </KeyboardAwareScrollView>
 

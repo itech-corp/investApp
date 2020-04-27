@@ -5,12 +5,13 @@ import { Input } from '_atoms';
 import {Button} from '_atoms';
 
 
- export default SignInFrom = ({navigation})=>
+
+ export default GuestUpForm = ({navigation}) =>
     <View>
         <View style={styles.loginHeader}>
-            <TouchableOpacity ><Text style={[styles.headerText]}>Sign In  </Text></TouchableOpacity><Text style={styles.textBar}>|</Text>
-            <TouchableOpacity onPress={()=>navigation.navigate('SignUp')} ><Text style={[styles.headerText,{color:'grey'}]}> Sign Up </Text></TouchableOpacity><Text style={styles.textBar}>|</Text> 
-            <TouchableOpacity onPress={()=>navigation.navigate('Guest')}><Text style={[styles.headerText,{color:'grey'}]}> Guest</Text></TouchableOpacity> 
+            <TouchableOpacity  onPress={()=>navigation.navigate('Login')} ><Text style={[styles.headerText,{color:'grey'}]}>Sign In  </Text></TouchableOpacity><Text style={styles.textBar}>|</Text>
+            <TouchableOpacity  onPress={()=>navigation.navigate('SignUp')}><Text style={[styles.headerText,{color:'grey'}]} > Sign Up </Text></TouchableOpacity><Text style={styles.textBar}>|</Text> 
+            <TouchableOpacity><Text style={styles.headerText}> Guest</Text></TouchableOpacity> 
         </View>
 
         <View style={styles.loginInputs}>
@@ -18,13 +19,12 @@ import {Button} from '_atoms';
             <Input iconName="lock" iconColor="#f5a10e" placeholderText="Password"/>
             <View style={{alignItems:'flex-end',width:'90%'}}>
                 <Text style={{color:'#fff',fontFamily:'Poppins-Regular'}}>
-                    Forgot your Password? <Text style={{color:'orange',fontFamily:'Poppins-Regular'}}> reset here</Text> 
+                    Forgot your Password ? <Text style={{color:'orange',fontFamily:'Poppins-Regular'}}> reset here</Text> 
                 </Text>
             </View>
-            <Button navigation={navigation} iconName="sign-in" iconColor="#fff" buttonText="Sign In" />
+            <Button navigation={navigation} iconName="sign-in" iconColor="#fff" buttonText="Next" />
         </View>
     </View>
- 
  
 
 const styles= StyleSheet.create({

@@ -6,18 +6,18 @@ import {
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import {SignUpForm } from '_molecules'
+import {GuestUpForm } from '_molecules'
 import investBrand from '../../assets/images/invest.png';
 
 
-const SignUpScreen = ({navigation}) => (
+const GuestUpScreen = ({navigation}) => (
   <KeyboardAwareScrollView
         style={styles.container}
       >
           <View style={styles.imageContainer}>
             <Image source={investBrand} style={styles.image}  />
           </View>
-          <SignUpForm navigation={navigation} />
+          <GuestUpForm navigation={navigation} />
           
       </KeyboardAwareScrollView>
 
@@ -40,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUpScreen;
+export default GuestUpScreen;

@@ -5,33 +5,22 @@ import { Input } from '_atoms';
 import {Button} from '_atoms';
 
 
- export default class FormContainer extends Component { 
-        
 
-    render(){
-        return(
+ export default SignUpForm = ({navigation}) =>
     <View>
         <View style={styles.loginHeader}>
-            <TouchableOpacity onPress={()=>navigation.navigate('SignIn')} style={[styles.headerText,{color:'grey'}]} ><Text style={[styles.headerText]}>Sign In  </Text></TouchableOpacity><Text style={styles.textBar}>|</Text>
-            <TouchableOpacity ><Text > Sign Up </Text></TouchableOpacity><Text style={styles.textBar}>|</Text> 
-            <TouchableOpacity><Text style={[styles.headerText,{color:'grey'}]}> Guest</Text></TouchableOpacity> 
+            <TouchableOpacity onPress={()=>navigation.navigate('Login')}  ><Text style={[styles.headerText,{color:'grey'}]}>Sign In  </Text></TouchableOpacity><Text style={styles.textBar}>|</Text>
+            <TouchableOpacity ><Text style={styles.headerText} > Sign Up </Text></TouchableOpacity><Text style={styles.textBar}>|</Text> 
+            <TouchableOpacity  onPress={()=>navigation.navigate('Guest')} ><Text style={[styles.headerText,{color:'grey'}]}> Guest</Text></TouchableOpacity> 
         </View>
 
         <View style={styles.loginInputs}>
-            <Input iconName="user" iconColor="#f5a10e" placeholderText="Email, username, Limo ID or Code" />
-            <Input iconName="lock" iconColor="#f5a10e" placeholderText="Password"/>
-            <View style={{alignItems:'flex-end',width:'90%'}}>
-                <Text style={{color:'#fff',fontFamily:'Poppins-Regular'}}>
-                    Forgot your Password is OK? <Text style={{color:'orange',fontFamily:'Poppins-Regular'}}> reset here</Text> 
-                </Text>
-            </View>
-            <Button navigation={this.props.navigation} iconName="sign-in" iconColor="#fff" buttonText="Sign In" />
+            <Input iconName="user" iconColor="#f5a10e" placeholderText="First Name" />
+            <Input iconName="user" iconColor="#f5a10e" placeholderText="Last Name"/>
+            <Button navigation={navigation} iconName="sign-in" iconColor="#fff" buttonText="Next" />
         </View>
     </View>
  
-        )
-    }
-}
 
 const styles= StyleSheet.create({
     loginHeader: {
