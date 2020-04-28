@@ -2,10 +2,10 @@ import React from 'react';
 import {Text,View,TouchableOpacity,StyleSheet} from 'react-native';
 import  Icon  from 'react-native-vector-icons/FontAwesome';
 
- export default Button = ({iconName,iconColor,buttonText,navigation}) =>
+ export default Button = ({iconName,iconColor,buttonText,bgColor}) =>
 
         <View style={{alignItems:'center'}}>
-            <TouchableOpacity onPress={()=>navigation.navigate('Home')} style={styles.loginButton}>
+            <View  style={[styles.loginButton, {backgroundColor:bgColor? bgColor:'#f5a10e'}]}>
                 <View style={styles.submitButton}>
                     <Text style={styles.loginText}>{buttonText}</Text>
                     <Icon 
@@ -14,19 +14,20 @@ import  Icon  from 'react-native-vector-icons/FontAwesome';
                     size={26}
                     style={styles.signIcon} />
                 </View>
-            </TouchableOpacity>
+            </View>
         </View>
 
 const styles= StyleSheet.create( 
 {
     loginButton: {
-        backgroundColor: '#f5a10e',
+       
         borderRadius: 5,
-        marginTop: 40,
+        marginTop: 20,
         marginBottom: 20,
-        marginLeft: 80,
-        marginRight: 80,
-        width:'86%',
+        marginLeft: 30,
+        marginRight: 30,
+        flex:1,
+        flexDirection:'row',
         height:60
       },
       submitButton:{

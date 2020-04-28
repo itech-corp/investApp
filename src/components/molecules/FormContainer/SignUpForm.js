@@ -6,20 +6,61 @@ import {Button} from '_atoms';
 
 
 
- export default SignUpForm = ({navigation}) =>
+class SignUpForm extends Component{
+    state ={
+        formData:<View style={styles.loginInputs}>
+        <Input iconName="user" iconColor="#f5a10e" placeholderText="First Name" />
+        <Input iconName="user" iconColor="#f5a10e" placeholderText="Last Name"/>
+        <TouchableOpacity onPress={()=>this.nextForm(1)} ><Button  iconName="sign-in" iconColor="#fff" buttonText="Next" /></TouchableOpacity>
+    </View>
+    }
+    
+    nextForm = (flow)=>{
+        let formData ='';
+        switch(flow) {
+            case 1:
+                formData = <View style={styles.loginInputs}>
+                <Input iconName="user" iconColor="#f5a10e" placeholderText="Username" />
+                <Input iconName="envelope" iconColor="#f5a10e" placeholderText="Email"/>
+                <TouchableOpacity onPress={()=>this.nextForm(2)} ><Button  iconName="sign-in" iconColor="#fff" buttonText="Next" /></TouchableOpacity>
+                </View>
+                this.setState({formData})
+                break;
+            case 2:
+                formData = <View style={styles.loginInputs}>
+                <Input iconName="flag" iconColor="#f5a10e" placeholderText="Country" />
+                <Input iconName="phone" iconColor="#f5a10e" placeholderText="Tel"/>
+                <TouchableOpacity onPress={()=>this.nextForm(3)} ><Button  iconName="sign-in" iconColor="#fff" buttonText="Next" /></TouchableOpacity>
+                </View>
+                this.setState({formData})
+                break;
+            case 3:
+                formData = <View style={styles.loginInputs}>
+                <Input iconName="lock" iconColor="#f5a10e" placeholderText="Password" />
+                <Input iconName="lock" iconColor="#f5a10e" placeholderText="Repeat Password"/>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate("Success")} ><Button  iconName="sign-in" iconColor="#fff" buttonText="Finish" /></TouchableOpacity>
+                </View>
+                this.setState({formData})
+                break;                
+            default:
+                break;
+        }
+    }
+    render(){
+        
+        return(
     <View>
         <View style={styles.loginHeader}>
-            <TouchableOpacity onPress={()=>navigation.navigate('Login')}  ><Text style={[styles.headerText,{color:'grey'}]}>Sign In  </Text></TouchableOpacity><Text style={styles.textBar}>|</Text>
+            <TouchableOpacity onPress={()=>this.props.navigation.navigate('Login')}  ><Text style={[styles.headerText,{color:'grey'}]}>Sign In  </Text></TouchableOpacity><Text style={styles.textBar}>|</Text>
             <TouchableOpacity ><Text style={styles.headerText} > Sign Up </Text></TouchableOpacity><Text style={styles.textBar}>|</Text> 
-            <TouchableOpacity  onPress={()=>navigation.navigate('Guest')} ><Text style={[styles.headerText,{color:'grey'}]}> Guest</Text></TouchableOpacity> 
+            <TouchableOpacity  onPress={()=>this.props.navigation.navigate('Guest')} ><Text style={[styles.headerText,{color:'grey'}]}> Guest</Text></TouchableOpacity> 
         </View>
-
-        <View style={styles.loginInputs}>
-            <Input iconName="user" iconColor="#f5a10e" placeholderText="First Name" />
-            <Input iconName="user" iconColor="#f5a10e" placeholderText="Last Name"/>
-            <Button navigation={navigation} iconName="sign-in" iconColor="#fff" buttonText="Next" />
-        </View>
+        {this.state.formData}
     </View>
+        )
+    }
+ }
+
  
 
 const styles= StyleSheet.create({
@@ -51,3 +92,5 @@ const styles= StyleSheet.create({
 
 
 })
+
+export default  SignUpForm

@@ -21,7 +21,7 @@ import {Button} from '_atoms';
                     Forgot your Password? <Text style={{color:'orange',fontFamily:'Poppins-Regular'}}> reset here</Text> 
                 </Text>
             </View>
-            <Button navigation={navigation} iconName="sign-in" iconColor="#fff" buttonText="Sign In" />
+            <TouchableOpacity onPress={()=>navigation.navigate('Home')} ><Button navigation={navigation} iconName="sign-in" iconColor="#fff" buttonText="Sign In" /></TouchableOpacity> 
         </View>
     </View>
  

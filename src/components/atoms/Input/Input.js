@@ -38,6 +38,6 @@ const styles= StyleSheet.create(
       padding:17,
       paddingRight:23,
       marginLeft:8,
-      borderRightWidth:0.2,
+      borderRightWidth:0.5,
       borderColor:'white'
   },})
